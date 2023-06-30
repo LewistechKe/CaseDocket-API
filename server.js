@@ -45,7 +45,7 @@ app.use((req, res, next) => {
 });
 
 app.get("/", (req, res) => {
-	res.send("API is running...");
+	res.send("API is running...welcome");
 });
 
 app.use("/", loginRoutes);
