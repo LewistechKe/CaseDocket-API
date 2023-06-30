@@ -8,18 +8,18 @@ import casesRoutes from "./routes/casesRoutes.js";
 import followupRoutes from "./routes/followupRoutes.js";
 
 const app = express();
-const PORT = 5000;
+//const PORT = 5000;
 
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
-app.use((req, res, next) => {
-	res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
-	res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-	res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-	next();
-});
+// app.use((req, res, next) => {
+// 	res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
+// 	res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+// 	res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+// 	next();
+// });
 
 // JWT Authentication middleware
 app.use((req, res, next) => {
@@ -54,6 +54,9 @@ app.use("/", settingsRoutes);
 app.use("/", casesRoutes);
 app.use("/", followupRoutes);
 
-app.listen(PORT, () => {
-	console.log(`Server started on port ${PORT}`);
+// app.listen(PORT, () => {
+// 	console.log(`Server started on port ${PORT}`);
+// });
+app.listen(config.port || 5000, () => {
+	console.log("Server started on port ");
 });
