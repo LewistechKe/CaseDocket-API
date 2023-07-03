@@ -6,6 +6,7 @@ import adminRoutes from "./routes/adminRoutes.js";
 import settingsRoutes from "./routes/settingsRoutes.js";
 import casesRoutes from "./routes/casesRoutes.js";
 import followupRoutes from "./routes/followupRoutes.js";
+import config from "./config/database.js";
 
 const app = express();
 //const PORT = 5000;
